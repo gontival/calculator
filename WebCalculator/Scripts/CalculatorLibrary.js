@@ -15,6 +15,8 @@ function initialize() {
     document.getElementById('btnMinus').addEventListener('click', minusClick);
     document.getElementById('btnClear').addEventListener('click', clear);
     document.getElementById('btnClearEntry').addEventListener('click', clearEntry);
+    document.getElementById('btnMultiply').addEventListener('click', multiplyClick);
+    document.getElementById('btnDivision').addEventListener('click', divisionClick);
 
     clear();
 }
@@ -42,3 +44,13 @@ function clear() {
 function clearEntry() {
     txtInput.value = '0';
 }
+
+function multiplyClick() {
+    txtResult.value = Number(txtInput.value) * Number(txtResult.value);
+    clearEntry();
+};
+
+function divisionClick() {
+    txtResult.value = Number(txtResult.value) / Number(txtInput.value);
+    clearEntry();
+};
