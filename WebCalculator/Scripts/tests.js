@@ -67,8 +67,8 @@ test("Clear Test", function () {
 
 test("Initialize Test", function () {
     expect(2);
-    txtInput = '';
-    txtResult = '';
+    txtInput.value = '';
+    txtResult.value = '';
     var expected = '0';
     equal(txtInput.value, expected, 'Expected value: ' + expected + ' Actual value: ' + txtInput.value);
     equal(txtResult.value, expected, 'Expected value: ' + expected + ' Actual value: ' + txtResult.value);
