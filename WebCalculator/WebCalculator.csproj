@@ -106,8 +106,12 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CalculatorTests.html" />
+    <Content Include="Content\qunit.css" />
     <Content Include="default.html" />
     <Content Include="Scripts\CalculatorLibrary.js" />
+    <Content Include="Scripts\qunit.js" />
+    <Content Include="Scripts\tests.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
