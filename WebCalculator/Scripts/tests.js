@@ -104,3 +104,20 @@ test("Division by 0 Test", function () {
     var expected = 'Infinity';
     equal(txtResult.value, expected, 'Expected value: ' + expected + ' Actual value: ' + txtResult.value);
 });
+
+test("Bubbling event Test", function () {
+
+    var btns = document.getElementsByTagName('button');
+    var buttonQuantity = btns.length;
+    expect(buttonQuantity);
+    
+    var calculatorContainer = document.getElementsByClassName('calculatorContainer');
+    for (var i = 0; i < buttonQuantity; i++)
+    {
+        var btnToClick = document.getElementById(btns[i].id.toString());
+        QUnit.triggerEvent(btnToClick, 'click');
+        var result = bubbleMessage;
+        var expected = 'A button has been clicked.';
+        equal(result, expected, 'Expected value: ' + expected + ' Actual value: ' + result);
+    }
+});
