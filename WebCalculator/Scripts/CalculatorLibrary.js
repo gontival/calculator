@@ -1,9 +1,11 @@
 ﻿var txtInput;
 var txtResult;
+var bubbleMessage;
 
 function initialize() {
     txtInput = document.getElementById('txtInput');
     txtResult = document.getElementById('txtResult');
+    bubbleMessage = '';
 
     //subscribe to all number buttons click event
     for (var i = 0; i < 10; i++) {
@@ -17,6 +19,10 @@ function initialize() {
     document.getElementById('btnClearEntry').addEventListener('click', clearEntry);
     document.getElementById('btnMultiply').addEventListener('click', multiplyClick);
     document.getElementById('btnDivision').addEventListener('click', divisionClick);
+
+    //bubbling for the container 
+    var calculatorContainer = document.getElementsByClassName('calculatorContainer');
+    calculatorContainer[0].addEventListener('click', click);
 
     clear();
 }
@@ -39,6 +45,7 @@ function minusClick() {
 function clear() {
     txtResult.value = '0';
     txtInput.value = '0';
+    bubbleMessage = '';
 }
 
 function clearEntry() {
@@ -54,3 +61,7 @@ function divisionClick() {
     txtResult.value = Number(txtResult.value) / Number(txtInput.value);
     clearEntry();
 };
+
+function click() {
+    bubbleMessage = 'A button has been clicked.';
+}
