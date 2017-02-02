@@ -94,3 +94,13 @@ test("Division Test", function () {
     var result = txtResult.value;
     equal(result, expected, 'Expected value: ' + expected + ' Actual value: ' + result);
 });
+
+test("Division by 0 Test", function () {
+    expect(1);
+    txtInputvalue = 0;
+    txtResult.value = 65536;
+    var btnDivision = document.getElementById('btnDivision');
+    QUnit.triggerEvent(btnDivision, 'click');
+    var expected = 'Infinity';
+    equal(txtResult.value, expected, 'Expected value: ' + expected + ' Actual value: ' + txtResult.value);
+});
