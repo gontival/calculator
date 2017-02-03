@@ -2,9 +2,20 @@
     background-color: hsl(255, 100%, 50%);
 }
 
+.calculatorContainer{
+    border: solid;
+    background-color: hsl(255, 100%, 60%);
+    width: 500px;
+    height: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    padding: 10px;
+}
+
 input{
-    width: 446px;
-    height: 35px;
+    width: 85%;
+    height: 7%;
     text-align: right;
     padding: 10px;
     border: inset;
@@ -12,9 +23,9 @@ input{
 
 button{
     background-color: hsl(255, 50%, 80%);
-    width: 150px;
-    height: 50px;
-    border: outset;
+    width: 25%;
+    height: 10%;
+    border: inset;
 }
 
 button:hover {
@@ -36,7 +47,8 @@ input, button {
     margin : 5px ;
 }
 
-#txtResult {
+[readonly] {
     background-color: hsl(255, 50%, 80%);
 }
+
 
