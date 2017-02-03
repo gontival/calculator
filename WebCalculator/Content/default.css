@@ -39,7 +39,7 @@ button:active{
     background-color: hsl(255, 50%, 50%);
 }
 
-input, button {
+input, button, header, footer {
     font-family : Arial ;
     font-size : 24pt ;
     border-width: thick ;
@@ -50,5 +50,4 @@ input, button {
 [readonly] {
     background-color: hsl(255, 50%, 80%);
 }
-
 
