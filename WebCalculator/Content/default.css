@@ -39,7 +39,7 @@ button:active{
     background-color: hsl(255, 50%, 50%);
 }
 
-input, button, header, footer {
+input, button {
     font-family : Arial ;
     font-size : 24pt ;
     border-width: thick ;
@@ -51,3 +51,12 @@ input, button, header, footer {
     background-color: hsl(255, 50%, 80%);
 }
 
+.headFoot {
+    width: 20%;
+    margin-left: auto;
+    margin-right : auto;
+    font-family : Arial ;
+    font-size : 24pt ;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
