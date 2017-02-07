@@ -7,28 +7,87 @@
     <link href="Content/default.css" rel="stylesheet" />
 </head>
 <body>
-    <header class="headFoot"> Web Calculator</header>
-    <div class="calculatorContainer">
-        <input id="txtResult" type="text" readonly="readonly" /> <br />
-        <input id="txtInput" type="text" /> <br />
-        <button id="btn7">7</button>
-        <button id="btn8">8</button>
-        <button id="btn9">9</button><br />
-        <button id="btn4">4</button>
-        <button id="btn5">5</button>
-        <button id="btn6">6</button><br />
-        <button id="btn1">1</button>
-        <button id="btn2">2</button>
-        <button id="btn3">3</button><br />
-        <button id="btnClear">C</button>
-        <button id="btn0">0</button>
-        <button id="btnClearEntry">CE</button><br />
-        <button id="btnPlus">+</button>
-        <button id="btnMinus">-</button>
-        <button id="btnMultiply">*</button>
-        <button id="btnDivision">/</button>
+    <!--<header class="headFoot"> Web Calculator</header>-->
+    <div id="container">
+        <header role="banner">
+            <hgroup id="headerText">
+                <h1>Contoso Ltd.</h1>
+                <h2>Your success equals our success.</h2>
+            </hgroup>
+        </header>
+        <nav role="navigation">
+            <a href="default.html">Home</a>
+        </nav>
+        <div role="main">
+            <div class="calculator">
+                <table>
+                    <tr>
+                        <td colspan="4">
+                            <input id="txtResult" type="text" readonly="readonly" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4">
+                            <input id="txtInput" type="text" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button id="btnClear">C</button></td>
+                        <td><button id="btnClearEntry">CE</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn7">7</button></td>
+                        <td><button id="btn8">8</button></td>
+                        <td><button id="btn9">9</button></td>
+                        <td><button id="btnPlus">+</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn4">4</button></td>
+                        <td><button id="btn5">5</button></td>
+                        <td><button id="btn6">6</button></td>
+                        <td><button id="btnMinus">-</button></td>
+                    </tr>
+                    <tr>
+                        <td><button id="btn1">1</button></td>
+                        <td><button id="btn2">2</button></td>
+                        <td><button id="btn3">3</button></td>
+                        <td><button id="btnMultiply">*</button></td>
+                    </tr>
+                    <tr>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button id="btn0">0</button></td>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button id="btnDivision">/</button></td>
+                    </tr>
+                    <tr>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button readonly="readonly">Todo</button></td>
+                        <td><button readonly="readonly">Todo</button></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <aside>
+            <p>Advertisements</p>
+            <blockquote>
+                Softness is the mind of a willow which returns the force of the wind against himself. <br/>
+                <p> by Someone </p>
+            </blockquote>
+        </aside>
+        <footer>
+            <ul>
+                <li><p>Copyright &copy; 2012, Contoso Ltd. All rights reserved.</p></li>
+                <li><address>Champ de Mars, 5 Avenue Anatole France, 75007 Paris</address></li>
+                <li><address><a href="email:contoso-contact@microsoft.com">Contact us</a></address></li>
+            </ul>
+        </footer>
     </div>
-    <footer class="headFoot"> Web Calculator example from certification book</footer>
+
+
+    <!--<footer class="headFoot"> Web Calculator example from certification book</footer>-->
 
     <script type="text/javascript" src="Scripts/CalculatorLibrary.js"></script>
     <script type="text/javascript">

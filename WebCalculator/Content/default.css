@@ -1,8 +1,73 @@
-﻿body {
-    background-color: hsl(255, 100%, 50%);
+﻿* {
+    margin: 0;
+    padding: 0;
 }
 
-.calculatorContainer{
+aside, footer, header, hgroup, nav {
+    display: block;
+}
+
+body {
+    background-color: hsl(255, 95%, 95%);
+    font-family: Cambria,'Times New Roman', serif;
+    color: #0068AC;
+}
+
+header {
+    height: 100px;
+    background-image: url('../Images/contosologo.gif');
+    background-repeat: no-repeat;
+    margin-top: 10px;
+}
+
+#headerText {
+    position: absolute;
+    top: 0px;
+    left: 160px;
+    width: 100%;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 55px;
+}
+
+h2 {
+    font-size: 18px;
+    line-height: 20px;
+    font-style: italic;
+}
+
+nav {
+    float: left;
+    width: 20%;
+    min-width: 125px;
+}
+
+div[role="main"] {
+    float: left;
+    width: 60%;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    min-width: 125px;
+}
+
+footer {
+    clear: both;
+    width: 100%;
+    height: 70px;
+    font-size: small;
+}
+
+#container {
+    min-width: 800px;
+}
+
+.calculator {
     border: solid;
     background-color: hsl(255, 100%, 60%);
     width: 500px;
@@ -13,50 +78,56 @@
     padding: 10px;
 }
 
-input{
+input {
     width: 85%;
-    height: 7%;
+    /*height: 7%;*/
     text-align: right;
-    padding: 10px;
+    padding: 5px;
     border: inset;
 }
 
-button{
+button {
     background-color: hsl(255, 50%, 80%);
-    width: 25%;
-    height: 10%;
-    border: inset;
+    width: 90%;
+    /*height: 10%;*/
+    border: outset;
 }
 
 button:hover {
-    background-color: hsl(255, 50%, 90%);
-}
+        background-color: hsl(255, 50%, 90%);
+    }
 
-button:active{
-    border: inset;
-    border-width: thick;
-    border-color: hsl(255, 100%, 100%);
-    background-color: hsl(255, 50%, 50%);
-}
+button:active {
+        border: inset;
+        border-width: thick;
+        border-color: hsl(255, 100%, 100%);
+        background-color: hsl(255, 50%, 50%);
+    }
 
 input, button {
-    font-family : Arial ;
-    font-size : 24pt ;
-    border-width: thick ;
-    border-color : hsl(255, 100%, 100%) ;
-    margin : 5px ;
+    font-family: Arial;
+    font-size: 20pt;
+    border-width: thick;
+    border-color: hsl(255, 100%, 100%);
+    margin: 5px;
 }
 
-[readonly] {
+[readonly], button[readonly]:hover {
     background-color: hsl(255, 50%, 80%);
 }
 
-.headFoot {
-    width: 20%;
-    margin-left: auto;
-    margin-right : auto;
-    font-family : Arial ;
-    font-size : 24pt ;
-    margin-top: 5px;
-    margin-bottom: 5px;
+button[readonly] {
+    color: gray;
+}
+
+table {
+    width: 100%;
+}
+
+td {
+    width: 25%;
+}
+
+#txtInput {
+    margin-bottom: 15px;
 }
