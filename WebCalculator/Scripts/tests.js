@@ -4,17 +4,16 @@ test("Button Click Test", function () {
     var buttonQuantity = 10;
     expect(buttonQuantity * 2);
 
-    for (var i = 0; i < buttonQuantity; i++)
-    {
-        var btn = document.getElementById('btn'+i);
+    for (var i = 0; i < buttonQuantity; i++) {
+        var btn = document.getElementById('btn' + i);
         QUnit.triggerEvent(btn, "click");
-        var result = txtInput.value[txtInput.value.length-1];
+        var result = txtInput.value[txtInput.value.length - 1];
         var expected = String(i);
         equal(result, expected, 'Expected value: ' + expected + '  Actual value: ' + result);
         var expectedLength = i < 2 ? 1 : i;
         equal(txtInput.value.length, expectedLength, 'Expected string length: ' + expectedLength + 'Actual length: ' + txtInput.value.length);
     }
-    
+
 });
 
 test("Add Test", function () {
@@ -110,10 +109,9 @@ test("Bubbling event Test", function () {
     var btns = document.getElementsByTagName('button');
     var buttonQuantity = btns.length;
     expect(buttonQuantity);
-    
+
     var calculatorContainer = document.getElementsByClassName('calculatorContainer');
-    for (var i = 0; i < buttonQuantity; i++)
-    {
+    for (var i = 0; i < buttonQuantity; i++) {
         var btnToClick = document.getElementById(btns[i].id.toString());
         QUnit.triggerEvent(btnToClick, 'click');
         var result = bubbleMessage;
@@ -121,3 +119,36 @@ test("Bubbling event Test", function () {
         equal(result, expected, 'Expected value: ' + expected + ' Actual value: ' + result);
     }
 });
+
+
+test("Object Literal Test", function () {
+    expect(2);
+
+    var car1 = {
+        year: 2000,
+        make: 'Ford',
+        model: 'Fusion',
+        repairs: ['repair1', 'repair2', 'repair3'],
+        getInfo: function () {
+            return 'Vehicle: ' + this.year + ' ' + this.make + ' ' + this.model;
+        }
+    };
+
+    var car2 = {
+        year: 2010,
+        make: 'BMW',
+        model: 'Z4',
+        getInfo: function () {
+            return 'Vehicle: ' + this.year + ' ' + this.make + ' ' + this.model;
+        }
+    }
+
+    var expected = 'Vehicle: 2000 Ford Fusion';
+    var actual = car1.getInfo();
+    equal(actual, expected, 'Expected value: ' + expected + '  Actual value: ' + actual);
+    var expected = 'Vehicle: 2010 BMW Z4';
+    var actual = car2.getInfo();
+    equal(actual, expected, 'Expected value: ' + expected + '  Actual value: ' + actual);
+});
+
+
