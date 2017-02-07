@@ -112,8 +112,12 @@ input, button {
     margin: 5px;
 }
 
-[readonly] {
+[readonly], button[readonly]:hover {
     background-color: hsl(255, 50%, 80%);
+}
+
+button[readonly] {
+    color: gray;
 }
 
 table {
@@ -124,3 +128,6 @@ td {
     width: 25%;
 }
 
+#txtInput {
+    margin-bottom: 15px;
+}
