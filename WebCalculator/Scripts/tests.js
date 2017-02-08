@@ -141,7 +141,7 @@ test("Object Literal Test", function () {
         getInfo: function () {
             return 'Vehicle: ' + this.year + ' ' + this.make + ' ' + this.model;
         }
-    }
+    };
 
     var expected = 'Vehicle: 2000 Ford Fusion';
     var actual = car1.getInfo();
@@ -151,4 +151,27 @@ test("Object Literal Test", function () {
     equal(actual, expected, 'Expected value: ' + expected + '  Actual value: ' + actual);
 });
 
+test("Create Instances Test Using Factory Pattern", function () {
+    expect(2);
 
+    // Creating dynamic objects by using the factory pattern
+    function getVehicule(theYear, theMake, theModel) {
+        var car = new Object();
+        car.TheYear = theYear;
+        car.TheMake = theMake;
+        car.TheModel = theModel;
+        car.getInfo = function () {
+            return 'Vehicule: ' + this.TheYear + ' ' + this.TheMake + ' ' + this.TheModel;
+        };
+        return car;
+    }
+
+    var car3 = getVehicule('2007', 'Peugeot', '207');
+    var car4 = getVehicule('2016', 'Tesla', 'S3');
+    var expected = 'Vehicule: 2007 Peugeot 207';
+    var actual = car3.getInfo();
+    equal(actual, expected, 'Expected value: ' + expected + ' Actual value: ' + actual);
+    var expected = 'Vehicule: 2016 Tesla S3';
+    var actual = car4.getInfo();
+    equal(actual, expected, 'Expected value: ' + expected + ' Actual value: ' + actual);
+});
