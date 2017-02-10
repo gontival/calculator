@@ -1,67 +1,75 @@
-﻿var txtInput;
-var txtResult;
-var bubbleMessage;
+﻿/// <reference path="_references.js" />
 
-function initialize() {
-    txtInput = document.getElementById('txtInput');
-    txtResult = document.getElementById('txtResult');
-    bubbleMessage = '';
+(function () {
+    this.calculatorNamespace = this.calculatorNamespace || {};
+    var ns = this.calculatorNamespace;
 
-    //subscribe to all number buttons click event
-    for (var i = 0; i < 10; i++) {
-        document.getElementById('btn' + i).addEventListener('click', numberClick);
+    function initialize() {
+
+        var calculator = new ns.Calculator();
+
+        //subscribe to all number buttons click event
+        $('button[id^=btnNumber]').on('click', calculator.numberClick);
+
+        //subscribe to operators button's click event
+        $('#btnPlus').on('click', calculator.plusClick);
+        $('#btnMinus').on('click', calculator.minusClick);
+        $('#btnClear').on('click', calculator.clear);
+        $('#btnClearEntry').on('click', calculator.clearEntry);
+        $('#btnMultiply').on('click', calculator.multiplyClick);
+        $('#btnDivision').on('click', calculator.divisionClick);
+        clear();
     }
 
-    //subscribe to operators button's click event
-    document.getElementById('btnPlus').addEventListener('click', plusClick);
-    document.getElementById('btnMinus').addEventListener('click', minusClick);
-    document.getElementById('btnClear').addEventListener('click', clear);
-    document.getElementById('btnClearEntry').addEventListener('click', clearEntry);
-    document.getElementById('btnMultiply').addEventListener('click', multiplyClick);
-    document.getElementById('btnDivision').addEventListener('click', divisionClick);
+    ns.Calculator = (function () {
 
-    //bubbling for the container 
-    var calculatorContainer = document.getElementsByClassName('calculatorContainer');
-    calculatorContainer[0].addEventListener('click', click);
+        //Constructor
+        function Calculator() {
 
-    clear();
-}
+        }
 
-function numberClick() {
-    txtInput.value = txtInput.value == '0' ?
-    this.innerText : txtInput.value + this.innerText;
-}
+        Calculator.prototype.numberClick = function() {
+            $('#txtInput').val( $('#txtInput').val() == '0' ?
+            $(this).text() : $('#txtInput').val() + $(this).text() );
+        }
 
-function plusClick() {
-    txtResult.value = Number(txtResult.value) + Number(txtInput.value);
-    clearEntry();
-}
+        Calculator.prototype.plusClick = function () {
+            $('#txtResult').val( Number($('#txtResult').val()) + Number($('#txtInput').val()) );
+            clearEntry();
+        }
 
-function minusClick() {
-    txtResult.value = Number(txtResult.value) - Number(txtInput.value);
-    clearEntry();
-}
+        Calculator.prototype.minusClick = function() {
+            txtResult.value = Number(txtResult.value) - Number(txtInput.value);
+            clearEntry();
+        }
 
-function clear() {
-    txtResult.value = '0';
-    txtInput.value = '0';
-    bubbleMessage = '';
-}
+        Calculator.prototype.clear = function () {
+            txtResult.value = '0';
+            txtInput.value = '0';
+            bubbleMessage = '';
+        }
 
-function clearEntry() {
-    txtInput.value = '0';
-}
+        Calculator.prototype.clearEntry= function() {
+            txtInput.value = '0';
+        }
 
-function multiplyClick() {
-    txtResult.value = Number(txtInput.value) * Number(txtResult.value);
-    clearEntry();
-};
+        Calculator.prototype.multiplyClick = function() {
+            txtResult.value = Number(txtInput.value) * Number(txtResult.value);
+            clearEntry();
+        };
 
-function divisionClick() {
-    txtResult.value = Number(txtResult.value) / Number(txtInput.value);
-    clearEntry();
-};
+        calculator.prototype.divisionClick = function() {
+            txtResult.value = Number(txtResult.value) / Number(txtInput.value);
+            clearEntry();
+        };
 
-function click() {
-    bubbleMessage = 'A button has been clicked.';
-}
+        Calculator.prototype.click = function () {
+            bubbleMessage = 'A button has been clicked.';
+        }
+
+        
+    }());
+    
+
+}());
+
