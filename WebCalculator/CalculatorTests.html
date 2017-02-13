@@ -15,27 +15,59 @@
     <ol id="qunit-tests"></ol>
     <div id="qunit-fixture">
         test markup, will be hidden
-        <div class="calculatorContainer">
-            <input id="txtResult" type="text" readonly="readonly" /> <br />
-            <input id="txtInput" type="text" /> <br />
-            <button id="btnNumber7">7</button>
-            <button id="btnNumber8">8</button>
-            <button id="btnNumber9">9</button><br />
-            <button id="btnNumber4">4</button>
-            <button id="btnNumber5">5</button>
-            <button id="btnNumber6">6</button><br />
-            <button id="btnNumber1">1</button>
-            <button id="btnNumber2">2</button>
-            <button id="btnNumber3">3</button><br />
-            <button id="btnClear">C</button>
-            <button id="btnNumber0">0</button>
-            <button id="btnClearEntry">CE</button><br />
-            <button id="btnPlus">+</button>
-            <button id="btnMinus">-</button>
-            <button id="btnMultiply">*</button>
-            <button id="btnDivision">/</button>
+        <div class="calculator">
+            <table>
+                <tr>
+                    <td colspan="4">
+                        <input id="txtResult" type="text" readonly="readonly" />
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <input id="txtInput" type="text" />
+                    </td>
+                </tr>
+                <tr>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button id="btnClear">C</button></td>
+                    <td><button id="btnClearEntry">CE</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btnNumber7">7</button></td>
+                    <td><button id="btnNumber8">8</button></td>
+                    <td><button id="btnNumber9">9</button></td>
+                    <td><button id="btnPlus">+</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btnNumber4">4</button></td>
+                    <td><button id="btnNumber5">5</button></td>
+                    <td><button id="btnNumber6">6</button></td>
+                    <td><button id="btnMinus">-</button></td>
+                </tr>
+                <tr>
+                    <td><button id="btnNumber1">1</button></td>
+                    <td><button id="btnNumber2">2</button></td>
+                    <td><button id="btnNumber3">3</button></td>
+                    <td><button id="btnMultiply">*</button></td>
+                </tr>
+                <tr>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button id="btn0">0</button></td>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button id="btnDivision">/</button></td>
+                </tr>
+                <tr>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button readonly="readonly">Todo</button></td>
+                    <td><button readonly="readonly">Todo</button></td>
+                </tr>
+            </table>
         </div>
     </div>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <!--<script src="Scripts/_references.js"></script>-->
     <script type="text/javascript" src="Scripts/qunit.js"></script>
     <script type="text/javascript" src="Scripts/CalculatorLibrary.js"></script>
     <script type="text/javascript" src="Scripts/tests.js"></script>

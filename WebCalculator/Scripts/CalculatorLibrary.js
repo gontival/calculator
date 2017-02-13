@@ -4,7 +4,7 @@
     this.calculatorNamespace = this.calculatorNamespace || {};
     var ns = this.calculatorNamespace;
 
-    function initialize() {
+    ns.initialize = function() {
 
         var calculator = new ns.Calculator();
 
@@ -18,7 +18,7 @@
         $('#btnClearEntry').on('click', calculator.clearEntry);
         $('#btnMultiply').on('click', calculator.multiplyClick);
         $('#btnDivision').on('click', calculator.divisionClick);
-        clear();
+        calculator.clear();
     }
 
     ns.Calculator = (function () {
@@ -35,41 +35,39 @@
 
         Calculator.prototype.plusClick = function () {
             $('#txtResult').val( Number($('#txtResult').val()) + Number($('#txtInput').val()) );
-            clearEntry();
+            Calculator.prototype.clearEntry();
         }
 
         Calculator.prototype.minusClick = function() {
-            txtResult.value = Number(txtResult.value) - Number(txtInput.value);
-            clearEntry();
+            $('#txtResult').val(Number($('#txtResult').val()) - Number($('#txtInput').val()));
+            Calculator.prototype.clearEntry();
         }
 
         Calculator.prototype.clear = function () {
-            txtResult.value = '0';
-            txtInput.value = '0';
+            $('#txtResult').val('0');
+            $('#txtInput').val('0');
             bubbleMessage = '';
         }
 
         Calculator.prototype.clearEntry= function() {
-            txtInput.value = '0';
+            $('#txtInput').val('0');
         }
 
         Calculator.prototype.multiplyClick = function() {
-            txtResult.value = Number(txtInput.value) * Number(txtResult.value);
-            clearEntry();
+            $('#txtResult').val(Number($('#txtResult').val()) * Number($('#txtInput').val()));
+            Calculator.prototype.clearEntry();
         };
 
-        calculator.prototype.divisionClick = function() {
-            txtResult.value = Number(txtResult.value) / Number(txtInput.value);
-            clearEntry();
+        Calculator.prototype.divisionClick = function() {
+            $('#txtResult').val(Number($('#txtResult').val()) / Number($('#txtInput').val()));
+            Calculator.prototype.clearEntry();
         };
 
         Calculator.prototype.click = function () {
             bubbleMessage = 'A button has been clicked.';
         }
 
-        
+        return Calculator;        
     }());
-    
-
 }());
 

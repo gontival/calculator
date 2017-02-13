@@ -88,10 +88,13 @@
 
 
     <!--<footer class="headFoot"> Web Calculator example from certification book</footer>-->
-
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <!--<script src="Scripts/_references.js"></script>-->
     <script type="text/javascript" src="Scripts/CalculatorLibrary.js"></script>
     <script type="text/javascript">
-        window.addEventListener('load', initialize);
+        $(document).ready(function () {
+            calculatorNamespace.initialize();
+        });
     </script>
 </body>
 </html>
