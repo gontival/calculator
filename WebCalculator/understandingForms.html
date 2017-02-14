@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Forms submission and validation</title>
+    <script src="Scripts/jquery-3.1.1.js"></script>
+    <script src="Scripts/default.js"></script>
+    <style>
+        /*Styling the validations*/
+        :valid {
+            border: solid lime;
+            font-weight: normal;
+        }
+
+        :invalid {
+            border: solid red;
+            font-weight: bold;
+        }
+
+        :required {
+            background-color: Yellow;
+        }
+
+        :optional {
+            background-color: LightGray;
+        }
+    </style>
+</head>
+<body>
+    <h1>Car form</h1>
+    <form id="myForm">
+        Favorite Car:
+        <select name="favoriteCar" required="required">
+            <option>Ford Fiesta</option>
+            <option value="Chevy">Chevrolet</option>
+            <option>BMW</option>
+        </select>
+        <br />
+        Comment:
+        <input type="text" name="comment" autofocus="autofocus" required="required" placeholder="enter a comment" /><br />
+        Email:
+        <input type="email" name="email" required="required" placeholder="give me your email" />
+        <button type="submit" name="submit">Submit</button>
+    </form>
+    <button id="myButton">Click Me</button><br />
+
+
+    <h1>Validating URL input</h1>
+    <form id="myForm">
+        website:
+        <input type="url" title="http://contoso.com" name="website" required="required" pattern="https?://.+" />
+        <button type="submit" name="submit">Submit</button>
+    </form>
+
+    <h1>Validating numbers and ranges</h1>
+    <form id="myForm">
+        Current Age:
+        <input type="number" name="age" min="18" max="99" value="30" required="required" /><br />
+        Rating:
+        <input type="range" name="rating" min="1" max="7" value="4" /><br />
+        <button type="submit" name="submit">Submit</button>
+    </form>
+
+</body>
+</html>
