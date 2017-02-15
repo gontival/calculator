@@ -8,7 +8,7 @@ aside, footer, header, hgroup, nav {
 }
 
 body {
-    background-color: hsl(255, 95%, 95%);
+    background-color: rgb(237, 231, 255);
     font-family: Cambria,'Times New Roman', serif;
     color: #0068AC;
 }
@@ -108,7 +108,7 @@ input, button {
     font-family: Arial;
     font-size: 20pt;
     border-width: thick;
-    border-color: hsl(255, 100%, 100%);
+    border-color: rgb(237, 231, 255);
     margin: 5px;
 }
 
@@ -180,4 +180,16 @@ textarea {
     vertical-align: top;
     font-family: Arial;
     font-size: 12pt;
+}
+
+select {
+    font-family: Arial;
+    font-size: 12pt;
+    margin: 5px;
+    width: 210px;
+    vertical-align: top;
+    border-width: medium;
+    border-color: hsl(255, 100%, 100%);
+    margin-bottom: 10px;
+    margin-top: 10px;
 }

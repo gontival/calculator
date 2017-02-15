@@ -30,8 +30,25 @@
                         <input type="text" name="lastName" id="lastName" required="required"/>
                     </div>
                     <div>
+                        <label for="dateOfBirth">Date of birth: </label>
+                        <input type="date" name="dateOfBirth" required="required" placeholder="Select your date of birth"/>
+                    </div>
+                    <div>
+                        <label for="file">Attached file: </label>
+                        <input type="file" name="file"/>
+                    </div>
+                    <div>
                         <label for="email" >Email Address: </label>
-                        <input type="email" name="email" id="email" required="required"/>
+                        <input type="email" name="email" id="email" required="required" placeholder="enter your email address"/>
+                    </div>
+                    <div>
+                        <label for="subject">Subject: </label>
+                        <select name="subject" required="required">
+                            <option>general information</option>
+                            <option value="job">job application</option>
+                            <option>partnership</option>
+                            <option>other</option>
+                        </select>
                     </div>
                     <div>
                         <label for="message">Message: </label>
